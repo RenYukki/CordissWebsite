@@ -60,31 +60,102 @@
             color: var(--text-white);
         }
 
-        .nav-links a {
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .nav-links > a:not(.btn-github-nav) {
             color: var(--text-white);
             text-decoration: none;
-            margin-left: 20px;
             font-size: 14px;
+            font-weight: 500;
+            padding: 0 14px;
+            min-height: 38px;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 20px;
+            transition: background 0.3s, opacity 0.3s;
             opacity: 0.9;
         }
 
-        .nav-links .btn-github-nav {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-left: 20px;
-            padding: 8px 16px;
+        .nav-links > a:not(.btn-github-nav):hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-links .btn-github-nav,
+        .nav-links .btn-discord-nav {
+            min-height: 38px;
+            min-width: 8.25rem;
+            padding: 0 14px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-sizing: border-box;
+            opacity: 1;
+        }
+
+        .nav-links .btn-github-nav {
             background: #24292f;
             color: #ffffff !important;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            opacity: 1;
         }
 
         .nav-links .btn-github-nav:hover {
             background: #2d333b;
+        }
+
+        .nav-links .btn-discord-nav {
+            font-family: inherit;
+            cursor: pointer;
+            background: #5865f2;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-links .btn-discord-nav:hover {
+            background: #4752c4;
+        }
+
+        .nav-links .btn-discord-nav:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            z-index: 3000;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 15px;
+            background: rgba(20, 21, 24, 0.96);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            color: var(--text-white);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(16px);
+            transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+            pointer-events: none;
+        }
+
+        .copy-toast.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
         }
 
         .hero {
@@ -163,6 +234,10 @@
                 <a href="index.html#how-it-works">Nasıl Çalışır?</a>
                 <a href="index.html#comparison">Karşılaştırma</a>
                 <a href="about.html">Hakkında</a>
+                <button type="button" class="btn-discord-nav js-copy-discord" aria-label="Discord davet bağlantısını kopyala">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    Discord
+                </button>
                 <a href="https://github.com/RenYukki/Cordiss" class="btn-github-nav" target="_blank" rel="noopener noreferrer">
                     <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                     GitHub
@@ -228,5 +303,40 @@
             <p>&copy; 2026 Cordiss Projesi. Gönüllü geliştirme, ücretsiz kullanım.</p>
         </div>
     </footer>
+
+    <div id="copyToast" class="copy-toast" role="status" aria-live="polite">Kopyalandı</div>
+
+    <script>
+        const DISCORD_INVITE = 'https://discord.gg/UQSSTUytjt';
+        const copyToast = document.getElementById('copyToast');
+        let copyToastTimer;
+
+        const showCopyToast = () => {
+            copyToast.classList.add('visible');
+            clearTimeout(copyToastTimer);
+            copyToastTimer = setTimeout(() => copyToast.classList.remove('visible'), 2200);
+        };
+
+        const copyDiscordInvite = async () => {
+            try {
+                await navigator.clipboard.writeText(DISCORD_INVITE);
+            } catch {
+                const ta = document.createElement('textarea');
+                ta.value = DISCORD_INVITE;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            }
+            showCopyToast();
+        };
+
+        document.querySelectorAll('.js-copy-discord').forEach((el) => {
+            el.addEventListener('click', copyDiscordInvite);
+        });
+    </script>
 </body>
 </html>
