@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordiss | Hakkında ve SSS</title>
+    <style>
+        :root {
+            --brand-color: #5865f2;
+            --bg-dark: #0f1011;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-white: #ffffff;
+            --text-gray: #b5bac1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at center, #1e2124 0%, #0f1011 100%);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(15, 16, 17, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-white);
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .nav-links .btn-github-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 20px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            background: #24292f;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            opacity: 1;
+        }
+
+        .nav-links .btn-github-nav:hover {
+            background: #2d333b;
+        }
+
+        .hero {
+            padding: 80px 0 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 8vw, 52px);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: var(--text-gray);
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            padding: 20px 0 80px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 24px;
+        }
+
+        .card h2 {
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .faq-item {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 14px;
+            margin-top: 14px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            color: #f7d870;
+            margin-bottom: 6px;
+        }
+
+        .footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-gray);
+        }
+        .footer p { max-width: 720px; margin-left: auto; margin-right: auto; }
+        .footer p:not(:last-child) { margin-bottom: 12px; }
+
+        @media (max-width: 860px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a class="logo" href="index.html">Cordiss</a>
+            <div class="nav-links">
+                <a href="index.html#how-it-works">Nasıl Çalışır?</a>
+                <a href="index.html#comparison">Karşılaştırma</a>
+                <a href="about.html">Hakkında</a>
+                <a href="https://github.com/RenYukki/Cordiss" class="btn-github-nav" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Hakkında ve En Çok Sorulan Sorular</h1>
+            <p>Cordiss'in ne olduğu, nasıl çalıştığı ve kullanıcıların en sık merak edebileceği soruların kısa cevapları. Proje açık kaynak olduğu için kodu inceleyerek güvenilirliği kendiniz değerlendirebilirsiniz.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-grid">
+            <article class="card">
+                <h2>Cordiss Hakkında</h2>
+                <p>Cordiss, en basit tabiriyle Modlu discorddur. Amaç, genel internet akışını etkilemeden stabil ve düşük gecikmeli bir Discord deneyimi sunmaktır.</p>
+                <p>Geleneksel çözümlerde tüm sistem trafiği farklı yollara yönlendirilirken, Cordiss sadece gerekli bağlantı adımlarını optimize eder.</p>
+                <p>Bu yaklaşım sayesinde oyunlarda ping artışı, tarayıcı yavaşlaması veya yayın akışında bozulma gibi yan etkiler minimumda tutulur.</p>
+                <p><strong>Açık kaynak ve güven:</strong> Cordiss açık kaynaklıdır; kaynak kodu herkese açık olduğu için uygulamanın ne yaptığını bağımsız olarak inceleyebilir, derleyebilir ve toplulukla birlikte denetleyebilirsiniz. Kapalı kutu yazılımların aksine, şeffaflık güvenilirliğin temelidir: gizli davranış veya arka kapı riskini azaltmak için kodun görünür olması kritik öneme sahiptir.</p>
+            </article>
+
+            <article class="card">
+                <h2>En Çok Sorulan Sorular</h2>
+
+                <div class="faq-item">
+                    <h3>Cordiss'i kimler kullanabilir?</h3>
+                    <p>Cordiss'i herkes kullanabilir. Özellikle yayıncılar yayın yaparken Vpn,dns,dpiblocker gibi teknolojiler yayın akışına zarar verebilirken cordiss sadece kendi trafiğine karışır.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>VPN yerine geçer mi?</h3>
+                    <p>Tam olarak değil. Cordiss genel amaçlı bir VPN değildir; Mesela SADECE cordiss açarsanız bu sizi robloxa veya engelli bir siteye sokamaz.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Güvenilir mi?</h3>
+                    <p>Cordiss açık kaynak olduğu için kaynak kodunu okuyup davranışı kendiniz doğrulayabilirsiniz; bu şeffaflık, güvenilirlik açısından kapalı kaynak alternatiflere göre güçlü bir avantajdır. Ayrıca Cordiss, Discord’un resmi sunucuları dışında üçüncü taraf sunucularla iletişim kurmaz; bunu ağ trafiğinizi izleyerek de doğrulayabilirsiniz.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Diğer platformlar ne zaman gelecek?</h3>
+                    <p>macOS, Linux ve Android sürümleri planlanıyor. Şu an öncelik Windows sürümünde.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Cordiss açık kaynak mı?</h3>
+                    <p>Evet. Cordiss açık kaynak olarak yayımlanır; kaynak kodu kamuya açık olduğu için ne yaptığını gizlemeden görebilir, inceleyebilir ve güvenilirliğini kendi kriterlerinize göre değerlendirebilirsiniz. Bu yaklaşım, kullanıcıların “güven bize” demek yerine “kodu kendin kontrol et” diyebilmesini sağlar.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Cordiss kullanırsam Discorddan ban yer miyim?</h3>
+                    <p>Teorik olarak discordun ToS u gereği herhangi bir 3.parti yazılım kullanmak ban sebebidir ancak discord bu konuda o kadarda katı değildir (Bizim gözlemimizce bkz. BetterDiscord). Ancak bu kesinlikle ban yemezsiniz demek değildir. Sorumluluk size aittir.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Cordiss açık kaynaklı bir projedir. Kaynak kodunun herkese açık olması, uygulamanın şeffaf ve denetlenebilir olmasını sağlar; bu da güvenilirlik için en sağlam yollardan biridir.</p>
+            <p>&copy; 2026 Cordiss Projesi. Gönüllü geliştirme, ücretsiz kullanım.</p>
+        </div>
+    </footer>
+</body>
+</html>
